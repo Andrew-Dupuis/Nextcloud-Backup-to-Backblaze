@@ -1,6 +1,6 @@
 # Nextcloud-Backup-to-Backblaze
 
-Shell script to perform a GFS backup of a Nextcloud instance to Backblaze B2
+Shell script to perform a complete, compressed, single-file, and GFS-versioned backup of a Nextcloud instance to Backblaze B2
 
 ## Behavior 
 

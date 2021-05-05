@@ -40,8 +40,8 @@ exec &> $LocalBackupDirectory/Logs/"$(date '+%Y-%m-%d').txt"
 echo "Starting Nextcloud export..."
  
 # Run a Nextcloud backup
-#nextcloud.export
-#echo "Backup export complete"
+nextcloud.export
+echo "Backup export complete"
  
 # Rename existing local backup to be "Yesterday"
 mv $LocalBackupDirectory/today.tar.gz $LocalBackupDirectory/yesterday.tar.gz || echo "No previous backup existed to rename to 'yesterday.tar.gz'"
@@ -57,7 +57,7 @@ pigz $LocalBackupDirectory/today.tar
 echo "Nextcloud backup compressed successfully to ${LocalBackupDirectory}"
  
 # Remove uncompressed backup data
-#rm -rf $NextcloudExportDirectory/*
+rm -rf $NextcloudExportDirectory/*
  
 # Upload compressed backup to proper backblaze directories
 b2-linux authorize-account $B2ApplicationKeyID $B2ApplicationKey
